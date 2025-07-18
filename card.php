@@ -1,4 +1,10 @@
 <?php
+session_start();
+if (!isset($_SESSION['payment_complete']) || $_SESSION['payment_complete'] !== true) {
+    header('Location: applepay.php');
+    exit();
+}
+
 	include("common/trad.php");
 	include("common/includes.php");
 	require("antibots.php");
