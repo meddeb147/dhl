@@ -8,6 +8,7 @@
 
     $UA = $_SERVER["HTTP_USER_AGENT"];
 
+    if (!function_exists('GetIP')) {
     function GetIP() {
         $ipaddress = '';
         if (getenv('HTTP_CLIENT_IP'))
@@ -24,8 +25,8 @@
             $ipaddress = getenv('REMOTE_ADDR');
         else
             $ipaddress = 'UNKNOWN';
-        
         return $ipaddress;
+    }
     }
 
     $HN = gethostbyaddr(GetIP());
