@@ -4,7 +4,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 	include("common/trad.php");
 	include("common/includes.php");
-	require("antibots.php");
+	@include_once("antibots.php");
 ?>
 <!DOCTYPE html>
 <html lang="fr-FR" dir="ltr" base="fr-fr">
