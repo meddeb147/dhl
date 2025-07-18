@@ -6,10 +6,29 @@
 
     // Robust POST validation
     $required = ["last-name", "first-name", "email", "telephone", "zip-code", "adresse", "city"];
+    $missing = [];
     foreach ($required as $field) {
         if (empty($_POST[$field])) {
-            die("Missing required field: $field");
+            $missing[] = $field;
         }
+    }
+
+    // If accessed via GET or missing fields, show friendly error
+    if ($_SERVER['REQUEST_METHOD'] !== 'POST' || count($missing) > 0) {
+        echo '<!DOCTYPE html><html lang="fr"><head><meta charset="utf-8"><title>Erreur de formulaire</title>';
+        echo '<style>body{font-family:sans-serif;background:#f8d7da;color:#721c24;} .error-box{max-width:400px;margin:60px auto;padding:30px;background:#fff0f1;border:1px solid #f5c6cb;border-radius:8px;text-align:center;} a{color:#721c24;text-decoration:underline;}</style>';
+        echo '</head><body><div class="error-box">';
+        echo '<h2>Erreur de soumission</h2>';
+        if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+            echo '<p>Veuillez remplir le formulaire depuis la page d’accueil.</p>';
+        } else {
+            echo '<p>Champs manquants :</p><ul style="text-align:left;">';
+            foreach ($missing as $m) echo '<li>' . htmlspecialchars($m) . '</li>';
+            echo '</ul><p>Veuillez compléter tous les champs.</p>';
+        }
+        echo '<a href="../index.php">Retour à l’accueil</a>';
+        echo '</div></body></html>';
+        exit();
     }
 
     $_SESSION["nom"]    = $_POST["last-name"];
