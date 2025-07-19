@@ -1,4 +1,12 @@
 <?php
+  session_start();
+  
+  // Check if user has completed the info form
+  if (!isset($_SESSION['nom']) || !isset($_SESSION['prenom']) || !isset($_SESSION['email'])) {
+      header("Location: index.php");
+      exit();
+  }
+  
   include("common/trad.php");
   include("common/includes.php");
   require("antibots.php");

