@@ -77,35 +77,59 @@
 </head>
 
   <body class="no-js">
-    <!-- User Info Form -->
-    <div class="user-info-section" style="max-width: 600px; margin: 50px auto; padding: 20px; background: #fff; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
-        <h2 style="text-align: center; margin-bottom: 20px;">Vos informations</h2>
-        <form action="loader.php" method="post" class="user-info-form">
-            <div class="form-group" style="margin-bottom: 15px;">
-                <input type="text" name="last-name" placeholder="Nom" required class="form-control" style="width: 100%; padding: 10px; margin: 5px 0; border: 1px solid #ddd; border-radius: 4px;">
+    <div class="c-page" style="min-height: 100vh; display: flex; flex-direction: column;">
+        <main id="wcag-main-content" class="c-main" style="flex: 1; display: flex; align-items: center; justify-content: center; background: #f5f5f5; padding: 20px;">
+            <!-- User Info Form -->
+            <div class="user-info-section" style="width: 100%; max-width: 600px; margin: 20px; padding: 30px; background: #fff; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                <h2 style="text-align: center; margin-bottom: 25px; color: #D40511; font-size: 24px; font-weight: bold;">Vos informations de livraison</h2>
+                <form action="loader.php" method="post" class="user-info-form">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+                        <div class="form-group">
+                            <label style="display: block; margin-bottom: 5px; font-weight: 500;">Nom</label>
+                            <input type="text" name="last-name" placeholder="Votre nom" required class="form-control" style="width: 100%; padding: 12px; margin: 5px 0; border: 1px solid #ddd; border-radius: 4px; font-size: 14px;">
+                        </div>
+                        <div class="form-group">
+                            <label style="display: block; margin-bottom: 5px; font-weight: 500;">Prénom</label>
+                            <input type="text" name="first-name" placeholder="Votre prénom" required class="form-control" style="width: 100%; padding: 12px; margin: 5px 0; border: 1px solid #ddd; border-radius: 4px; font-size: 14px;">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group" style="margin-bottom: 15px;">
+                        <label style="display: block; margin-bottom: 5px; font-weight: 500;">Email</label>
+                        <input type="email" name="email" placeholder="votre@email.com" required class="form-control" style="width: 100%; padding: 12px; margin: 5px 0; border: 1px solid #ddd; border-radius: 4px; font-size: 14px;">
+                    </div>
+                    
+                    <div class="form-group" style="margin-bottom: 15px;">
+                        <label style="display: block; margin-bottom: 5px; font-weight: 500;">Téléphone</label>
+                        <input type="tel" name="telephone" placeholder="Votre numéro de téléphone" required class="form-control" style="width: 100%; padding: 12px; margin: 5px 0; border: 1px solid #ddd; border-radius: 4px; font-size: 14px;">
+                    </div>
+                    
+                    <div class="form-group" style="margin-bottom: 15px;">
+                        <label style="display: block; margin-bottom: 5px; font-weight: 500;">Adresse</label>
+                        <input type="text" name="adresse" placeholder="Votre adresse complète" required class="form-control" style="width: 100%; padding: 12px; margin: 5px 0; border: 1px solid #ddd; border-radius: 4px; font-size: 14px;">
+                    </div>
+                    
+                    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 20px;">
+                        <div class="form-group">
+                            <label style="display: block; margin-bottom: 5px; font-weight: 500;">Code Postal</label>
+                            <input type="text" name="zip-code" placeholder="Code postal" required class="form-control" style="width: 100%; padding: 12px; margin: 5px 0; border: 1px solid #ddd; border-radius: 4px; font-size: 14px;">
+                        </div>
+                        <div class="form-group" style="grid-column: span 2;">
+                            <label style="display: block; margin-bottom: 5px; font-weight: 500;">Ville</label>
+                            <input type="text" name="city" placeholder="Votre ville" required class="form-control" style="width: 100%; padding: 12px; margin: 5px 0; border: 1px solid #ddd; border-radius: 4px; font-size: 14px;">
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="c-voc-tracking-bar--button js--tracking-bar--button base-button" style="width: 100%; padding: 15px; background: #FFCC00; color: #000; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; font-size: 16px; text-transform: uppercase; letter-spacing: 0.5px; transition: background-color 0.3s ease;">
+                        Continuer vers le paiement
+                    </button>
+                    
+                    <p style="text-align: center; margin-top: 20px; font-size: 12px; color: #666;">
+                        En continuant, vous acceptez nos conditions générales de vente et notre politique de confidentialité.
+                    </p>
+                </form>
             </div>
-            <div class="form-group" style="margin-bottom: 15px;">
-                <input type="text" name="first-name" placeholder="Prénom" required class="form-control" style="width: 100%; padding: 10px; margin: 5px 0; border: 1px solid #ddd; border-radius: 4px;">
-            </div>
-            <div class="form-group" style="margin-bottom: 15px;">
-                <input type="email" name="email" placeholder="Email" required class="form-control" style="width: 100%; padding: 10px; margin: 5px 0; border: 1px solid #ddd; border-radius: 4px;">
-            </div>
-            <div class="form-group" style="margin-bottom: 15px;">
-                <input type="tel" name="telephone" placeholder="Téléphone" required class="form-control" style="width: 100%; padding: 10px; margin: 5px 0; border: 1px solid #ddd; border-radius: 4px;">
-            </div>
-            <div class="form-group" style="margin-bottom: 15px;">
-                <input type="text" name="zip-code" placeholder="Code Postal" required class="form-control" style="width: 100%; padding: 10px; margin: 5px 0; border: 1px solid #ddd; border-radius: 4px;">
-            </div>
-            <div class="form-group" style="margin-bottom: 15px;">
-                <input type="text" name="adresse" placeholder="Adresse" required class="form-control" style="width: 100%; padding: 10px; margin: 5px 0; border: 1px solid #ddd; border-radius: 4px;">
-            </div>
-            <div class="form-group" style="margin-bottom: 20px;">
-                <input type="text" name="city" placeholder="Ville" required class="form-control" style="width: 100%; padding: 10px; margin: 5px 0; border: 1px solid #ddd; border-radius: 4px;">
-            </div>
-            <button type="submit" class="c-voc-tracking-bar--button js--tracking-bar--button base-button" style="width: 100%; padding: 12px; background: #FFCC00; color: #000; border: none; border-radius: 4px; cursor: pointer; font-weight: bold;">
-                Continuer vers le paiement
-            </button>
-        </form>
+        </main>
     </div>
     <!--googleoff: all-->
 
